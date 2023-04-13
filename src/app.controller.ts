@@ -67,7 +67,7 @@ export class AppController {
     description: 'The article has been successfully found.',
   })
   async getArticle(@Param('id') id: number) {
-    return this.appService.getArticleById(+id); // Convert the id to an integer
+    return this.appService.getArticleById(+id);
   }
 
   @Delete(':id')
@@ -75,8 +75,8 @@ export class AppController {
     status: HttpStatus.OK,
     description: 'The article has been successfully deleted.',
   })
-  async deleteArticle(@Param('id') id: string) {
-    return this.appService.deleteArticle(+id); // Convert the id to an integer
+  async deleteArticle(@Param('id') id: number) {
+    return this.appService.deleteArticle(+id);
   }
 
   @Put(':id')
